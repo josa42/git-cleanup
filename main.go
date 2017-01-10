@@ -2,6 +2,7 @@ package main
 
 import (
 	docopt "github.com/docopt/docopt-go"
+	"github.com/josa42/git-cleanup/cleanup"
 	stringutils "github.com/josa42/go-stringutils"
 )
 
@@ -19,7 +20,7 @@ func main() {
 	arguments, _ := docopt.Parse(usage, nil, true, "Git Cleanup 0.1.0", false)
 
 	cmdType := ""
-	cmdTypes := []string{"home", "issues", "prs", "commits"}
+	cmdTypes := []string{"branches", "keep"}
 
 	for _, key := range cmdTypes {
 		if arguments[key] == true {
@@ -29,6 +30,8 @@ func main() {
 
 	switch cmdType {
 	case "branches":
+		cleanup.Branches()
 	case "keep":
+		cleanup.Keep()
 	}
 }
