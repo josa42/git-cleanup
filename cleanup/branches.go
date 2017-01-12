@@ -1,8 +1,22 @@
 package cleanup
 
 import "fmt"
+import git "github.com/josa42/go-gitutils"
 
 // Branches :
 func Branches() {
-	fmt.Println("Not implemented yet")
+
+	branch := git.CurrentBranch()
+	mergedBranches := git.MergedBranches()
+
+	fmt.Println("=> Fetch")
+
+	if branch == "master" && len(mergedBranches) > 0 {
+		fmt.Println("=> Delete merged branches")
+		for _, branch := range mergedBranches {
+			fmt.Println("Delete:", branch)
+
+			git.Exec("branch", "--delete", branch)
+		}
+	}
 }
