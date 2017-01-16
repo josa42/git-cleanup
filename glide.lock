@@ -1,10 +1,10 @@
-hash: fe6148e9abd17ac664cd9fa19b840d363c5eb415af2cdd3ea3928c36eac48101
-updated: 2017-01-12T13:34:58.337506919+01:00
+hash: e91ac7b3f9cd2da84e9695448cc23027eda00a5727ba8ce9c20b2904e42b1dd9
+updated: 2017-01-16T15:02:06.841111812+01:00
 imports:
 - name: github.com/docopt/docopt-go
   version: 784ddc588536785e7299f7272f39101f7faccc3f
 - name: github.com/josa42/go-gitutils
-  version: 4e612294854017366578ec845b1b6992dd3dffb0
+  version: 58ef480c7753db315d2228d1150a314a470935f5
 - name: github.com/josa42/go-stringutils
   version: e129a8b9917f96ed0f632e9c523c068e9d78c486
 - name: github.com/mattn/go-zglob
