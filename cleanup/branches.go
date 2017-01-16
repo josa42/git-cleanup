@@ -1,7 +1,10 @@
 package cleanup
 
-import "fmt"
-import git "github.com/josa42/go-gitutils"
+import (
+	"fmt"
+
+	git "github.com/josa42/go-gitutils"
+)
 
 // Branches :
 func Branches() {

@@ -6,6 +6,7 @@ import (
 	"path"
 	"path/filepath"
 
+	git "github.com/josa42/go-gitutils"
 	zglob "github.com/mattn/go-zglob"
 )
 
@@ -17,7 +18,7 @@ func Keep() {
 		dir := path.Dir(keep)
 		files, _ := filepath.Glob(dir + "/*")
 
-		if len(files) > 1 {
+		if len(files) > 1 && !git.IsIgnored(keep) {
 			fmt.Println("Delete:", keep)
 			os.Remove(keep)
 		}
