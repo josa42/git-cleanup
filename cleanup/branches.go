@@ -12,6 +12,7 @@ func Branches() {
 	branch := git.CurrentBranch()
 	mergedBranches := git.MergedBranches()
 
+	fmt.Println("Clean branches")
 	fmt.Println("=> Fetch")
 
 	if branch == "master" && len(mergedBranches) > 0 {

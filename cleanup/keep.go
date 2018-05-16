@@ -12,6 +12,7 @@ import (
 
 // Keep :
 func Keep() {
+	fmt.Println("Clean .gitkeep files")
 	keeps, _ := zglob.Glob("**/.gitkeep")
 
 	for _, keep := range keeps {
@@ -19,7 +20,7 @@ func Keep() {
 		files, _ := filepath.Glob(dir + "/*")
 
 		if len(files) > 1 && !git.IsIgnored(keep) {
-			fmt.Println("Delete:", keep)
+			fmt.Println("=> Delete:", keep)
 			os.Remove(keep)
 		}
 	}

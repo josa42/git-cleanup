@@ -9,6 +9,7 @@ import (
 func main() {
 	usage := stringutils.TrimLeadingTabs(`
 		Usage:
+		  git-cleanup
 		  git-cleanup branches
 		  git-cleanup keep     [--all]
 
@@ -32,6 +33,9 @@ func main() {
 	case "branches":
 		cleanup.Branches()
 	case "keep":
+		cleanup.Keep()
+	case "":
+		cleanup.Branches()
 		cleanup.Keep()
 	}
 }
