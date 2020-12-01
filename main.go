@@ -18,7 +18,7 @@ func main() {
 		  --version          Show version.
   `)
 
-	arguments, _ := docopt.Parse(usage, nil, true, "Git Cleanup 0.3.0", false)
+	arguments, _ := docopt.Parse(usage, nil, true, "git-cleanup 0.3.0", false)
 
 	cmdType := ""
 	cmdTypes := []string{"branches", "keep"}
